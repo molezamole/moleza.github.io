@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .testimonial {
+            width: 150px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+        }
+        .testimonial img {
+            width: 100%;
+            border-radius: 50%;
+        }
+        .testimonial p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="testimonials"></div>
+
+    <script>
+        var testimonials = [
+            {
+                name: "Nome da Pessoa 1",
+                comment: "Comentário de satisfação 1",
+                image: "URL da imagem 1"
+            },
+            {
+                name: "Nome da Pessoa 2",
+                comment: "Comentário de satisfação 2",
+                image: "URL da imagem 2"
+            },
+            {
+                name: "Nome da Pessoa 3",
+                comment: "Comentário de satisfação 3",
+                image: "URL da imagem 3"
+            }
+        ];
+
+        var testimonialsDiv = document.getElementById("testimonials");
+
+        testimonials.forEach(function(testimonial) {
+            var testimonialDiv = document.createElement("div");
+            testimonialDiv.className = "testimonial";
+
+            var img = document.createElement("img");
+            img.src = testimonial.image;
+
+            var name = document.createElement("p");
+            name.textContent = testimonial.name;
+
+            var comment = document.createElement("p");
+            comment.textContent = testimonial.comment;
+
+            testimonialDiv.appendChild(img);
+            testimonialDiv.appendChild(name);
+            testimonialDiv.appendChild(comment);
+
+            testimonialsDiv.appendChild(testimonialDiv);
+        });
+    </script>
+</body>
+</html>
